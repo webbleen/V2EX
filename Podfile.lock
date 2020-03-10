@@ -1,0 +1,111 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AMScrollingNavbar (5.6.1)
+  - FontAwesome.swift (1.8.3)
+  - Heimdallr (3.7.0):
+    - Heimdallr/Core (= 3.7.0)
+  - Heimdallr/Core (3.7.0):
+    - Result (~> 4.1.0)
+  - Kingfisher (4.10.1)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.3.1)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - Result (4.1.0)
+  - Router (1.0.0)
+  - SideMenu (5.0.1)
+  - SKPhotoBrowser (6.1.0)
+  - SnapKit (4.2.0)
+  - SwiftyJSON (5.0.0)
+  - SwipeTransition (0.4.2)
+  - SwipeTransitionAutoSwipeBack (0.4.2):
+    - SwipeTransition (~> 0.4.2)
+  - Turbolinks (3.0.0)
+  - XCGLogger (7.0.1):
+    - XCGLogger/Core (= 7.0.1)
+  - XCGLogger/Core (7.0.1):
+    - ObjcExceptionBridging
+  - YYKeyboardManager (1.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - AMScrollingNavbar
+  - FontAwesome.swift
+  - Heimdallr (from `https://github.com/trivago/Heimdallr.swift`)
+  - Kingfisher
+  - MBProgressHUD
+  - MJRefresh
+  - Router (from `https://github.com/klaus01/Router.git`)
+  - SideMenu
+  - SKPhotoBrowser
+  - SnapKit
+  - SwiftyJSON
+  - SwipeTransition
+  - SwipeTransitionAutoSwipeBack
+  - Turbolinks (from `https://github.com/turbolinks/turbolinks-ios.git`)
+  - XCGLogger
+  - YYKeyboardManager
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AMScrollingNavbar
+    - FontAwesome.swift
+    - Kingfisher
+    - MBProgressHUD
+    - MJRefresh
+    - ObjcExceptionBridging
+    - Result
+    - SideMenu
+    - SKPhotoBrowser
+    - SnapKit
+    - SwiftyJSON
+    - SwipeTransition
+    - SwipeTransitionAutoSwipeBack
+    - XCGLogger
+    - YYKeyboardManager
+
+EXTERNAL SOURCES:
+  Heimdallr:
+    :git: https://github.com/trivago/Heimdallr.swift
+  Router:
+    :git: https://github.com/klaus01/Router.git
+  Turbolinks:
+    :git: https://github.com/turbolinks/turbolinks-ios.git
+
+CHECKOUT OPTIONS:
+  Heimdallr:
+    :commit: fd4b9c2966c0b68587bc9904fd7cc85d4964cb3a
+    :git: https://github.com/trivago/Heimdallr.swift
+  Router:
+    :commit: c28227be65a43505432812b83a24ee0a0977dfe1
+    :git: https://github.com/klaus01/Router.git
+  Turbolinks:
+    :commit: bc5b78da1138903909062f14f384d2a56f73e994
+    :git: https://github.com/turbolinks/turbolinks-ios.git
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AMScrollingNavbar: 602dd7a26efd0edb40d67ec20b5ee80b9f573bbb
+  FontAwesome.swift: 2a3235131a6caffc6b2ccba318e94d793b2fd342
+  Heimdallr: 389f5d32a9fc813b2e568d9bd7af6a3b058bdd87
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  Router: 6088d6d321e097070d5ea4bd792cb015dfa0fbb4
+  SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
+  SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  SwipeTransition: 03f6f995646bdff37946af75c442692b011cb348
+  SwipeTransitionAutoSwipeBack: 64605a9e0d9bef917ba23f26f23bbe3ce8af4158
+  Turbolinks: 4e3a5ce8132e96019236ca7f8f274a0034de2a39
+  XCGLogger: 1943831ef907df55108b0b18657953f868de973b
+  YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
+
+PODFILE CHECKSUM: 5b063e264269b6ae8350441ecafa2b3289fa0a4b
+
+COCOAPODS: 1.8.4
