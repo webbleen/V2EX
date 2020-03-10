@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4E7875B6C88991290D168F88 /* Pods_V2EX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AC36A37E3D41943F18D6B9 /* Pods_V2EX.framework */; };
 		8A9669DB24179C71000089B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9669DA24179C71000089B7 /* AppDelegate.swift */; };
-		8A9669DD24179C71000089B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9669DC24179C71000089B7 /* SceneDelegate.swift */; };
 		8A9669DF24179C71000089B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9669DE24179C71000089B7 /* ViewController.swift */; };
 		8A9669E224179C71000089B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9669E024179C71000089B7 /* Main.storyboard */; };
 		8A9669E424179C75000089B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9669E324179C75000089B7 /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 		431F4DDD95D973B47D9F013C /* Pods-V2EX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.release.xcconfig"; path = "Target Support Files/Pods-V2EX/Pods-V2EX.release.xcconfig"; sourceTree = "<group>"; };
 		8A9669D724179C71000089B7 /* V2EX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V2EX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A9669DA24179C71000089B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8A9669DC24179C71000089B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8A9669DE24179C71000089B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A9669E124179C71000089B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A9669E324179C75000089B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				8A9669DA24179C71000089B7 /* AppDelegate.swift */,
-				8A9669DC24179C71000089B7 /* SceneDelegate.swift */,
 				8A9669DE24179C71000089B7 /* ViewController.swift */,
 				8A9669E024179C71000089B7 /* Main.storyboard */,
 				8A9669E324179C75000089B7 /* Assets.xcassets */,
@@ -88,7 +85,6 @@
 				CB0E25AB03F3EB187C42C370 /* Pods-V2EX.debug.xcconfig */,
 				431F4DDD95D973B47D9F013C /* Pods-V2EX.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,7 +205,6 @@
 			files = (
 				8A9669DF24179C71000089B7 /* ViewController.swift in Sources */,
 				8A9669DB24179C71000089B7 /* AppDelegate.swift in Sources */,
-				8A9669DD24179C71000089B7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = V2EX/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,7 +359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.webbleen.V2EX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -374,6 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = V2EX/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,7 +378,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.webbleen.V2EX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
