@@ -61,7 +61,16 @@ class TopicCell: UITableViewCell {
     var data: Topic? {
         didSet {
             if let data = data {
-                
+                let avatarSize = CGSize(width: kAvatarSize.width * 2, height: kAvatarSize.height * 2)
+                let imageProcessor = RoundCornerImageProcessor(cornerRadius: avatarSize.width / 2.0, targetSize: avatarSize)
+                avatarImageView.kf.setImage(with: ImageResource(downloadURL: data.member.avatarNormal), options: [
+                    .processor(imageProcessor),
+                    .transition(ImageTransition.fade(0.5))
+                ])
+                titleLabel.attributedText = titleAttributedText(data)
+                repliesCountLabel.text = data.replies > 0 ? "\(data.replies)" : nil
+                nodeButton.setTitle(data.node.title, for: .normal)
+                userNameButton.setTitle(data.member.username, for: .normal)
             } else {
                 avatarImageView.kf.setImage(with: nil)
                 titleLabel.attributedText = nil
@@ -148,7 +157,7 @@ extension TopicCell {
     
     fileprivate func titleAttributedText(_ data: Topic) -> NSAttributedString {
         let attributes = [NSAttributedString.Key.font : kTitleTextFont]
-        let attributedString = NSMutableAttributedString(string: "data.title", attributes: attributes)
+        let attributedString = NSMutableAttributedString(string: data.title, attributes: attributes)
         
         func addIcon(name fontAwesomeName: FontAwesome, color: UIColor) {
             let attributes = [NSAttributedString.Key.font : UIFont.fontAwesome(ofSize: kTitleTextSize, style: .solid),
