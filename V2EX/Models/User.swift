@@ -29,18 +29,18 @@ struct User {
     init(json: JSON) {
         id = json["id"].intValue
         username = json["username"].stringValue
-        website = json["website"].stringValue
-        github = json["github"].stringValue
-        psn = json["psn"].stringValue
+        website = json["website"].string
+        github = json["github"].string
+        psn = json["psn"].string
         avatarNormal = json["avatar_normal"].stringValue
-        bio = json["bio"].stringValue
+        bio = json["bio"].string
         url = json["url"].stringValue
-        tagline = json["tagline"].stringValue
-        twitter = json["twitter"].stringValue
+        tagline = json["tagline"].string
+        twitter = json["twitter"].string
         created = json["created"].intValue
         avatarLarge = json["avatar_large"].stringValue
         avatarMini = json["avatar_mini"].stringValue
-        location = json["location"].stringValue
-        btc = json["btc"].stringValue
+        location = json["location"].string
+        btc = json["btc"].string
     }
 }

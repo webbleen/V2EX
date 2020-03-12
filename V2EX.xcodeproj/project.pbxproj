@@ -35,6 +35,7 @@
 		8AA74AED2419F0D100A0743F /* SiteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA74AEC2419F0D000A0743F /* SiteInfo.swift */; };
 		8ADFDD42241A02340098D5B0 /* SiteStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFDD41241A02340098D5B0 /* SiteStatus.swift */; };
 		8ADFDD44241A0E800098D5B0 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFDD43241A0E800098D5B0 /* Reply.swift */; };
+		8ADFDD46241A15DE0098D5B0 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFDD45241A15DE0098D5B0 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		8AA74AEC2419F0D000A0743F /* SiteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteInfo.swift; sourceTree = "<group>"; };
 		8ADFDD41241A02340098D5B0 /* SiteStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteStatus.swift; sourceTree = "<group>"; };
 		8ADFDD43241A0E800098D5B0 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
+		8ADFDD45241A15DE0098D5B0 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		CB0E25AB03F3EB187C42C370 /* Pods-V2EX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.debug.xcconfig"; path = "Target Support Files/Pods-V2EX/Pods-V2EX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,12 +117,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8A69D3AE2418E57000208BA7 /* Libraries */ = {
+		8A69D3AE2418E57000208BA7 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				8A69D3AF2418E58500208BA7 /* APIRequest.swift */,
+				8ADFDD45241A15DE0098D5B0 /* APIService.swift */,
 			);
-			path = Libraries;
+			path = API;
 			sourceTree = "<group>";
 		};
 		8A9669CE24179C71000089B7 = {
@@ -150,7 +153,7 @@
 				8A69D3A02418C49700208BA7 /* Models */,
 				8A69D3A72418CAC700208BA7 /* Views */,
 				8A9669F124187676000089B7 /* Controllers */,
-				8A69D3AE2418E57000208BA7 /* Libraries */,
+				8A69D3AE2418E57000208BA7 /* API */,
 				8A9669F624188629000089B7 /* Extensions */,
 				8A9669EE241874A0000089B7 /* Supporting Files */,
 			);
@@ -335,6 +338,7 @@
 				8A69D3A62418C4CF00208BA7 /* User.swift in Sources */,
 				8A9669F5241878FD000089B7 /* ThemeNavigationController.swift in Sources */,
 				8AA74AED2419F0D100A0743F /* SiteInfo.swift in Sources */,
+				8ADFDD46241A15DE0098D5B0 /* APIService.swift in Sources */,
 				8ADFDD44241A0E800098D5B0 /* Reply.swift in Sources */,
 				8A9669F32418768F000089B7 /* RootViewController.swift in Sources */,
 				8A69D3992418AB7600208BA7 /* TopicsViewController.swift in Sources */,

@@ -11,8 +11,6 @@ import UIKit
 let ROOT_URL = "https://www.v2ex.com/"
 let API_PATH = "api/"
 
-let API_URL = ROOT_URL + API_PATH
-
 /// 取网站信息
 /// @GET
 /// {
@@ -21,7 +19,7 @@ let API_URL = ROOT_URL + API_PATH
 ///   "description" : "创意工作者们的社区",
 ///   "domain" : "www.v2ex.com"
 /// }
-let API_SITE_INFO = API_URL + "site/info.json"
+let API_SITE_INFO = API_PATH + "site/info.json"
 
 /// 取网站状态
 /// @GET
@@ -29,42 +27,42 @@ let API_SITE_INFO = API_URL + "site/info.json"
 ///   "topic_max" : 126172,
 ///   "member_max" : 71033
 /// }
-let API_SITE_STATUS = API_URL + "site/stats.json"
+let API_SITE_STATUS = API_PATH + "site/stats.json"
 
 /// 取最新主题
 /// @GET
-let API_TOPICS_LATEST = API_URL + "topics/latest.json"
+let API_TOPICS_LATEST = API_PATH + "topics/latest.json"
 
 /// 取热议主题
 /// @GET
-let API_TOPICS_HOT = API_URL + "topics/hot.json"
+let API_TOPICS_HOT = API_PATH + "topics/hot.json"
 
 /// 主题详细信息
 /// @GET
 /// @param id 话题id
-let API_TOPIC_DETAILS = API_URL + "topics/show.json"
+let API_TOPIC_DETAILS = API_PATH + "topics/show.json"
 
 /// 取主题回复
 /// @GET
 /// @param topic_id
 /// @param page
 /// @param page_size
-let API_TOPIC_REPLY = API_URL + "replies/show.json"
+let API_TOPIC_REPLY = API_PATH + "replies/show.json"
 
 /// 取用户信息
 /// @GET
 /// @param username
-let API_MEMBER = API_URL + "members/show.json"
+let API_MEMBER = API_PATH + "members/show.json"
 
 /// 取节点信息
 /// @GET
 /// @param name
-let API_NODE = API_URL + "nodes/show.json"
+let API_NODE = API_PATH + "nodes/show.json"
 
 /// 取所有节点列表
 /// @GET
 /// @param name
-let API_ALL_NODES = API_URL + "nodes/all.json"
+let API_ALL_NODES = API_PATH + "nodes/all.json"
 
 // 获取今日诗词token
 // {
