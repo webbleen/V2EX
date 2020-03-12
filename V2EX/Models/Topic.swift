@@ -14,13 +14,13 @@ struct Topic {
     let title: String
     let node: Node
     let member: User
-    let last_reply_by: String
-    let last_touched: Int
+    let lastReplyBy: String
+    let lastTouched: Int
     let url: String
     let created: Int
     let content: String
-    let content_rendered: String
-    let last_modified: Int
+    let contentRendered: String
+    let lastModified: Int
     let replies: Int
     
     init(json: JSON) {
@@ -28,13 +28,13 @@ struct Topic {
         title = json["title"].stringValue
         node = Node(json: json["node"])
         member = User(json: json["member"])
-        last_reply_by = json["last_reply_by"].stringValue
-        last_touched = json["last_touched"].intValue
+        lastReplyBy = json["last_reply_by"].stringValue
+        lastTouched = json["last_touched"].intValue
         url = json["url"].stringValue
         created = json["created"].intValue
         content = json["content"].stringValue
-        content_rendered = json["content_rendered"].stringValue
-        last_modified = json["last_modified"].intValue
+        contentRendered = json["content_rendered"].stringValue
+        lastModified = json["last_modified"].intValue
         replies = json["replies"].intValue
     }
 }
