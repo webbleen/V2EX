@@ -19,16 +19,16 @@ class APIRequest {
     static var share: APIRequest {
         return _shared
     }
-    
+
     fileprivate lazy var manager: SessionManager = {
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         configuration.timeoutIntervalForRequest = 5
         configuration.timeoutIntervalForResource = 5
         
-        let ret = SessionManager(configuration: configuration)
-        ret.adapter = self
-        return ret
+        let manager = SessionManager(configuration: configuration)
+        manager.adapter = self
+        return manager
     }()
     
     var accessToken: String?
@@ -38,7 +38,7 @@ class APIRequest {
             switch response.result {
             case .success(_):
                 let statusCode = response.response!.statusCode
-                log.debug([method, path, statusCode])
+                logger.debug([method, path, statusCode])
                 if statusCode == 401 {
                     return //logout
                 }
@@ -49,11 +49,9 @@ class APIRequest {
                     } catch { }
                 }
                 callback(response, result)
-                break
             case .failure(let error):
-                log.error([method, path, error])
+                logger.error([method, path, error])
                 callback(response, nil)
-                break
             }
         }
     }

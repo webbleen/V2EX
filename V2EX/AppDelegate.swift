@@ -10,20 +10,20 @@ import UIKit
 import AMScrollingNavbar
 import XCGLogger
 
-let log: XCGLogger = {
-    let log = XCGLogger.default
+let logger: XCGLogger = {
+    let logger = XCGLogger.default
     #if DEBUG
-        log.outputLevel = .debug
-        log.levelDescriptions[.verbose] = "🗯"
-        log.levelDescriptions[.debug] = "🔹"
-        log.levelDescriptions[.info] = "ℹ️"
-        log.levelDescriptions[.warning] = "⚠️"
-        log.levelDescriptions[.error] = "‼️"
-        log.levelDescriptions[.severe] = "💣"
+        logger.outputLevel = .debug
+        logger.levelDescriptions[.verbose] = "🗯"
+        logger.levelDescriptions[.debug] = "🔹"
+        logger.levelDescriptions[.info] = "ℹ️"
+        logger.levelDescriptions[.warning] = "⚠️"
+        logger.levelDescriptions[.error] = "‼️"
+        logger.levelDescriptions[.severe] = "💣"
     #else
-        log.outputLevel = .none
+        logger.outputLevel = .none
     #endif
-    return log
+    return logger
 }()
 
 @UIApplicationMain

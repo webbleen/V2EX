@@ -19,36 +19,34 @@ class SideMenuViewController: UITableViewController {
     }
     
     private lazy var datas = [[ItemData]]()
-    
     fileprivate lazy var router: Router = {
         let router = Router()
-        router.bind("/logout") { (req) in
+        router.bind("/logout") { (request) in
             /// TODO: logout
         }
         return router
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = "V2EX"
-        
+
         refreshDatas()
-        
+
         tableView.backgroundColor = SIDEMENU_BG_COLOR
-        
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return datas.count
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas[section].count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let itemData = datas[indexPath.section][indexPath.row]
@@ -58,11 +56,11 @@ class SideMenuViewController: UITableViewController {
         cell.selectionStyle = itemData.actionURL == nil ? .none : .blue
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let itemData = datas[indexPath.section][indexPath.row]
-        if let url = itemData.actionURL {
-            action(forURL: url)
+        if let actionUrl = itemData.actionURL {
+            action(forURL: actionUrl)
         }
     }
 }
@@ -72,7 +70,7 @@ class SideMenuViewController: UITableViewController {
 extension SideMenuViewController {
     func refreshDatas() {
         datas.removeAll()
-        
+
         datas.append([
             ItemData(
                 name: "sign in".localized,
@@ -87,7 +85,7 @@ extension SideMenuViewController {
                 actionURL: URL(string: "\(ROOT_URL)/account/sign_up")!
             )
         ])
-        
+
         datas.append([
             ItemData(
                 name: "wiki".localized,
@@ -96,7 +94,7 @@ extension SideMenuViewController {
                 actionURL: URL(string: "\(ROOT_URL)/wiki")!
             )
         ])
-        
+
         let build = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
         datas.append([
             ItemData(
@@ -112,7 +110,7 @@ extension SideMenuViewController {
                 actionURL: nil
             )
         ])
-        
+
         self.tableView.reloadData()
     }
 }
@@ -121,15 +119,15 @@ extension SideMenuViewController {
 @objc
 extension SideMenuViewController {
     
-    fileprivate func action(forURL url: URL) {
-        guard let host = url.host else {
+    fileprivate func action(forURL actionUrl: URL) {
+        guard let host = actionUrl.host else {
             return
         }
         if host != URL(string: ROOT_URL)!.host! {
-            UIApplication.shared.openURL(url)
-        } else if router.match(URL(string: url.path)!) == nil {
+            UIApplication.shared.openURL(actionUrl)
+        } else if router.match(URL(string: actionUrl.path)!) == nil {
             dismiss(animated: true, completion: {
-                if let host = url.host, host != URL(string: ROOT_URL)!.host! {
+                if let host = actionUrl.host, host != URL(string: ROOT_URL)!.host! {
                     //TurbolinksSessionLib.shared.safariOpen(url)
                 } else {
                     //TurbolinksSessionLib.shared.action(.Advance, path: url.path)
