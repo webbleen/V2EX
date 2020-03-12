@@ -41,10 +41,12 @@ class RootTopicsViewController: TopicsViewController {
             UIBarButtonItem.narrowButtonItem(image: UIImage(named: "search"), target: self, action: #selector(searchAction)),
             UIBarButtonItem.narrowButtonItem(image: UIImage(named: "filter"), target: self, action: #selector(filterAction)),
         ]
+        
+        reloadTopics()
     }
     
     override func loadTopics(offset: Int, limit: Int, callback: @escaping (APICallbackResponse, [Topic]?) -> ()) {
-        
+        APIService.getLastestTopic(callback: callback)
     }
 }
 
@@ -62,6 +64,22 @@ extension RootTopicsViewController {
     
     func notificationsAction() {
         
+    }
+    
+}
+
+
+// MARK: - private methods
+
+extension RootTopicsViewController {
+    
+    fileprivate func load(nodeID: Int, offset: Int) {
+        self.nodeID = nodeID
+        self.tableView.mj_header?.beginRefreshing()
+    }
+    
+    fileprivate func reloadTopics() {
+        load(nodeID: 0, offset: 0)
     }
     
 }

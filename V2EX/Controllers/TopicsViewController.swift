@@ -79,6 +79,7 @@ class TopicsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         /// TODO:
+        logger.debug(["tableView", "didSelectRowAt", indexPath])
     }
 }
 
@@ -105,7 +106,48 @@ extension TopicsViewController {
         isLoading = true
         
         loadTopics(offset: offset, limit: limit) { [weak self] (response, result) in
+            guard let `self` = self else {
+                return
+            }
             
+            self.isLoading = false
+            
+            if let header = self.tableView.mj_header, header.isRefreshing {
+                header.endRefreshing()
+            }
+            if let footer = self.tableView.mj_footer, footer.isRefreshing {
+                footer.endRefreshing()
+            }
+            self.tableView.mj_footer?.isHidden = result == nil ? true : (result!.count < limit)
+            
+            if let topics = result {
+                if self.topicList == nil || offset == 0 {
+                    self.topicList = topics
+                } else {
+                    self.topicList! += topics
+                }
+                self.tableView.reloadData()
+            } else {
+                var error: V2Error!
+                switch response.result {
+                case .success:
+                    guard let statusCode = response.response?.statusCode else {
+                        return
+                    }
+                    switch statusCode {
+                    case 200..<300:
+                        return
+                    case 404:
+                        error = V2Error.HttpNotFoundError
+                    default:
+                        error = V2Error(HTTPStatusCode: statusCode)
+                    }
+                case .failure(let err):
+                    error = V2Error(title: "网络连接错误", message: err.localizedDescription)
+                }
+                
+                self.presentError(error)
+            }
         }
     }
     
