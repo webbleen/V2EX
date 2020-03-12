@@ -10,5 +10,37 @@ import Foundation
 import SwiftyJSON
 
 struct Node {
+    let id: Int
+    let name: String
+    let avatarLarge: String
+    let avatarNormal: String
+    let title: String
+    let url: String
+    let topics: Int
+    let footer: String
+    let header: String
+    let titleAlternative: String
+    let avatarMini: String
+    let stars: Int
+    //let aliases: [AnyObject]
+    let root: Bool
+    let parentNodeName: String
     
+    init(json: JSON) {
+        id = json["id"].intValue
+        name = json["name"].stringValue
+        avatarLarge = json["avatar_large"].stringValue
+        avatarNormal = json["avatar_normal"].stringValue
+        title = json["title"].stringValue
+        url = json["url"].stringValue
+        topics = json["topics"].intValue
+        footer = json["footer"].stringValue
+        header = json["header"].stringValue
+        titleAlternative = json["title_alternative"].stringValue
+        avatarMini = json["avatar_mini"].stringValue
+        stars = json["stars"].intValue
+        //aliases = json["aliases"] as! [AnyObject]
+        root = json["root"].boolValue
+        parentNodeName = json["parent_node_name"].stringValue
+    }
 }

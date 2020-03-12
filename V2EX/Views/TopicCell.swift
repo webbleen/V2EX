@@ -101,7 +101,7 @@ class TopicCell: UITableViewCell {
     }
 }
 
-// MARK: -action
+// MARK: - action
 @objc
 extension TopicCell {
     func userAction() {
