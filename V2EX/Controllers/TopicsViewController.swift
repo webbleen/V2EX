@@ -146,7 +146,11 @@ extension TopicsViewController {
                     error = V2Error(title: "网络连接错误", message: err.localizedDescription)
                 }
                 
-                self.presentError(error)
+                if let list = self.topicList, list.count > 0 {
+                    MBHUD.error(error.message)
+                } else {
+                    self.presentError(error)
+                }
             }
         }
     }

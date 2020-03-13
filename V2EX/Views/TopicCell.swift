@@ -63,7 +63,8 @@ class TopicCell: UITableViewCell {
             if let data = data {
                 let avatarSize = CGSize(width: kAvatarSize.width * 2, height: kAvatarSize.height * 2)
                 let imageProcessor = RoundCornerImageProcessor(cornerRadius: avatarSize.width / 2.0, targetSize: avatarSize)
-                avatarImageView.kf.setImage(with: ImageResource(downloadURL: data.member.avatarNormal), options: [
+                let imageResource = ImageResource(downloadURL: data.member.avatarNormal)
+                avatarImageView.kf.setImage(with: imageResource, options: [
                     .processor(imageProcessor),
                     .transition(ImageTransition.fade(0.5))
                 ])

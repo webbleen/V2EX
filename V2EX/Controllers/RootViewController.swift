@@ -28,7 +28,7 @@ class RootViewController: UITabBarController {
         
         tabBar.isHidden = true
         navigationItem.leftBarButtonItems = [
-            //UIBarButtonItem.fixNavigationSpacer(),
+            UIBarButtonItem.fixNavigationSpacer(),
             UIBarButtonItem.narrowButtonItem(image: UIImage(named: "menu"), target: self, action: #selector(displaySideMenu))
         ]
         delegate = self

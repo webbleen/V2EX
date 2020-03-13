@@ -10,6 +10,9 @@ import UIKit
 
 class RootTopicsViewController: TopicsViewController {
     
+    
+    fileprivate var filterData = TopicsFilterViewController.NodeData.listType(.latest)
+    
     fileprivate lazy var badgeLabel: UILabel = {
         let view = UILabel(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
         view.clipsToBounds = true
@@ -42,7 +45,9 @@ class RootTopicsViewController: TopicsViewController {
             UIBarButtonItem.narrowButtonItem(image: UIImage(named: "filter"), target: self, action: #selector(filterAction)),
         ]
         
-        reloadTopics()
+        resetTitle(filterData)
+        reloadTopics(filterData)
+        refreshBadgeLabel()
     }
     
     override func loadTopics(offset: Int, limit: Int, callback: @escaping (APICallbackResponse, [Topic]?) -> ()) {
@@ -55,7 +60,17 @@ class RootTopicsViewController: TopicsViewController {
 extension RootTopicsViewController {
     
     func filterAction() {
-        
+        let vc = TopicsFilterViewController.show()
+        vc.selectedData = filterData
+        vc.onChangeSelect = { [weak self] (sender) in
+            guard let `self` = self, let data = sender.selectedData else {
+                return
+            }
+            self.filterData = data
+            self.resetTitle(data)
+            self.reloadTopics(data)
+            sender.close()
+        }
     }
     
     func searchAction() {
@@ -73,13 +88,25 @@ extension RootTopicsViewController {
 
 extension RootTopicsViewController {
     
+    fileprivate func resetTitle(_ filterData: TopicsFilterViewController.NodeData) {
+        /// TODO:
+        
+        tabBarController?.title = navigationItem.title
+    }
+    
     fileprivate func load(nodeID: Int, offset: Int) {
         self.nodeID = nodeID
         self.tableView.mj_header?.beginRefreshing()
     }
     
-    fileprivate func reloadTopics() {
+    fileprivate func reloadTopics(_ filterData: TopicsFilterViewController.NodeData) {
         load(nodeID: 0, offset: 0)
+    }
+    
+    fileprivate func refreshBadgeLabel() {
+        /// TODO:
+        badgeLabel.isHidden = false
+        badgeLabel.text = "5"
     }
     
 }
