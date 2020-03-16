@@ -146,7 +146,6 @@ extension TopicsFilterViewController {
         var nodeGroupDatas = [GroupData]()
         
         func sortAndCreateNodeGroupDatas() {
-            let nodeDic = nodes.map { [$0.name, $0] }
             let filterNode = nodes.sorted {
                 $0.parentNodeName != $1.parentNodeName ? $0.parentNodeName < $1.parentNodeName : $0.name < $1.name
             }.filter {
