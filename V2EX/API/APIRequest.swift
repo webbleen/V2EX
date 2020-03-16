@@ -38,7 +38,7 @@ class APIRequest {
             switch response.result {
             case .success(_):
                 let statusCode = response.response!.statusCode
-                logger.debug([method, path, statusCode])
+                logger.debug([method, path, parameters ?? "", statusCode])
                 if statusCode == 401 {
                     return //logout
                 }

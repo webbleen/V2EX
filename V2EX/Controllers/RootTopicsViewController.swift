@@ -12,6 +12,7 @@ class RootTopicsViewController: TopicsViewController {
     
     
     fileprivate var filterData = TopicsFilterViewController.NodeData.listType(.latest)
+    fileprivate var listType = APIService.TopicType.latest
     
     fileprivate lazy var badgeLabel: UILabel = {
         let view = UILabel(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
@@ -51,7 +52,7 @@ class RootTopicsViewController: TopicsViewController {
     }
     
     override func loadTopics(offset: Int, limit: Int, callback: @escaping (APICallbackResponse, [Topic]?) -> ()) {
-        APIService.getLastestTopic(callback: callback)
+        APIService.getTopicList(listType, nodeId: nodeID, offset: offset, limit: limit, callback: callback)
     }
 }
 
@@ -94,13 +95,19 @@ extension RootTopicsViewController {
         tabBarController?.title = navigationItem.title
     }
     
-    fileprivate func load(nodeID: Int, offset: Int) {
+    fileprivate func load(listType: APIService.TopicType, nodeID: Int, offset: Int) {
+        self.listType = listType
         self.nodeID = nodeID
         self.tableView.mj_header?.beginRefreshing()
     }
     
     fileprivate func reloadTopics(_ filterData: TopicsFilterViewController.NodeData) {
-        load(nodeID: 0, offset: 0)
+        switch filterData {
+        case let .listType(type):
+            load(listType: type, nodeID: 0, offset: 0)
+        case let .node(id, _, _):
+            load(listType: .latest, nodeID: id, offset: 0)
+        }
     }
     
     fileprivate func refreshBadgeLabel() {

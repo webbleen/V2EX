@@ -11,6 +11,38 @@ import Foundation
 /// 网络接口
 class APIService {
     
+    /// list接口排序类型
+    ///
+    /// - hot: 最热主题
+    /// - latest: 最新主题
+    enum TopicType: String {
+        case hot
+        case latest
+    }
+    
+    static func getTopicList(_ type: TopicType, nodeId: Int = 0, offset: Int = 0, limit: Int = 20, callback: @escaping (APICallbackResponse, [Topic]?) -> ()) {
+        if nodeId == 0 {
+            switch type {
+            case .latest:
+                getLastestTopic(callback: callback)
+            case .hot:
+                getHotTopic(callback: callback)
+            }
+        } else {
+            var parameters = [String: AnyObject]()
+            parameters["node_id"] = nodeId as AnyObject?
+            APIRequest.share.get(API_TOPIC_DETAILS, parameters: parameters) { (response, result) in
+                guard let _ = result, let topicList = result!.array, topicList.count > 0 else {
+                    callback(response, nil)
+                    return
+                }
+                
+                let topics = topicList.map { Topic(json: $0) }
+                callback(response, topics)
+            }
+        }
+    }
+    
     /// 最新主题
     /// - Parameter callback: 完成时回调
     static func getLastestTopic(callback: @escaping (APICallbackResponse, [Topic]?) -> ()) {

@@ -39,7 +39,7 @@ let API_TOPICS_HOT = API_PATH + "topics/hot.json"
 
 /// 主题详细信息
 /// @GET
-/// @param id 话题id
+/// @param [id 话题id]/[node_id 节点id]/[node_name 节点名称]/[username 用户名]
 let API_TOPIC_DETAILS = API_PATH + "topics/show.json"
 
 /// 取主题回复
@@ -51,12 +51,12 @@ let API_TOPIC_REPLY = API_PATH + "replies/show.json"
 
 /// 取用户信息
 /// @GET
-/// @param username
+/// @param username/id
 let API_MEMBER = API_PATH + "members/show.json"
 
 /// 取节点信息
 /// @GET
-/// @param name
+/// @param name/id
 let API_NODE = API_PATH + "nodes/show.json"
 
 /// 取所有节点列表

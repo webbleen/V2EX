@@ -12,17 +12,8 @@ import SwiftyJSON
 
 class TopicsFilterViewController: UIViewController {
     
-    /// list接口排序类型
-    ///
-    /// - hot: 最热主题
-    /// - latest: 最新主题
-    enum ListType: String {
-        case hot
-        case latest
-    }
-    
     enum NodeData {
-        case listType(ListType)
+        case listType(APIService.TopicType)
         case node(id: Int, name: String, title: String)
         
         func getTitle() -> String {
@@ -206,7 +197,7 @@ extension TopicsFilterViewController {
             guard let `self` = self, let nodes = result else {
                return
             }
-            
+
             self.addGroupDatas(nodes: nodes, isSync: false)
         }
     }
