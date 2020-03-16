@@ -5,3 +5,12 @@
   Created by WENBIN.LI on 3/16/20.
   Copyright © 2020 webbleen. All rights reserved.
 */
+
+"retry" = "重试";
+"sign in" = "登录";
+"sign up" = "注册";
+"wiki" = "知识库";
+"copyright" = "版权";
+"type hot" = "最热话题";
+"type latest" = "最新话题";
+"all topics" = "所有帖子";

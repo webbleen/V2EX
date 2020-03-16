@@ -5,3 +5,12 @@
   Created by WENBIN.LI on 3/16/20.
   Copyright © 2020 webbleen. All rights reserved.
 */
+
+"retry" = "Retry";
+"sign in" = "Sign in";
+"sign up" = "Sign up";
+"wiki" = "Wiki";
+"copyright" = "Copyright";
+"type hot" = "Hot";
+"type latest" = "Latest";
+"all topics" = "All topics";
