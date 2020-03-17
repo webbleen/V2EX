@@ -90,8 +90,7 @@ extension RootTopicsViewController {
 extension RootTopicsViewController {
     
     fileprivate func resetTitle(_ filterData: TopicsFilterViewController.NodeData) {
-        /// TODO:
-        
+        navigationItem.title = filterData.getTitle()
         tabBarController?.title = navigationItem.title
     }
     
