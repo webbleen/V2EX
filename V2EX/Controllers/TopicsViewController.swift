@@ -78,8 +78,9 @@ class TopicsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /// TODO:
-        logger.debug(["tableView", "didSelectRowAt", indexPath])
+        let data = topicList![(indexPath as NSIndexPath).row]
+        let vc = TopicDetailsViewController(topicId: data.id)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

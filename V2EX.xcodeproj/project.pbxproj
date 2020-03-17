@@ -41,6 +41,8 @@
 		8ADFDD4C241B6D430098D5B0 /* TopicsFilterNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFDD4B241B6D430098D5B0 /* TopicsFilterNodeCell.swift */; };
 		8ADFDD4E241B6D720098D5B0 /* TopicsFilterNodeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFDD4D241B6D720098D5B0 /* TopicsFilterNodeSectionHeaderView.swift */; };
 		8ADFDD51241F20B30098D5B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ADFDD53241F20B30098D5B0 /* Localizable.strings */; };
+		8ADFDD5A24209D270098D5B0 /* TopicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFDD5924209D270098D5B0 /* TopicDetailsViewController.swift */; };
+		8ADFDD5C24209D880098D5B0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADFDD5B24209D880098D5B0 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		8ADFDD54241F21060098D5B0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		8ADFDD55241F21060098D5B0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		8ADFDD56241F21060098D5B0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8ADFDD5924209D270098D5B0 /* TopicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailsViewController.swift; sourceTree = "<group>"; };
+		8ADFDD5B24209D880098D5B0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CB0E25AB03F3EB187C42C370 /* Pods-V2EX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.debug.xcconfig"; path = "Target Support Files/Pods-V2EX/Pods-V2EX.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +203,8 @@
 				8A69D3982418AB7600208BA7 /* TopicsViewController.swift */,
 				8A69D39A2418ABB900208BA7 /* RootTopicsViewController.swift */,
 				8ADFDD49241B5CF60098D5B0 /* TopicsFilterViewController.swift */,
+				8ADFDD5924209D270098D5B0 /* TopicDetailsViewController.swift */,
+				8ADFDD5B24209D880098D5B0 /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 				8A69D3B02418E58500208BA7 /* APIRequest.swift in Sources */,
 				8A9669DF24179C71000089B7 /* ViewController.swift in Sources */,
 				8A69D3AD2418CDC600208BA7 /* TopicCell.swift in Sources */,
+				8ADFDD5C24209D880098D5B0 /* WebViewController.swift in Sources */,
 				8A69D3A22418C4B000208BA7 /* Node.swift in Sources */,
 				8A9669DB24179C71000089B7 /* AppDelegate.swift in Sources */,
 				8A9669F824188673000089B7 /* UIBarButtonItem+Additions.swift in Sources */,
@@ -369,6 +376,7 @@
 				8A69D39B2418ABB900208BA7 /* RootTopicsViewController.swift in Sources */,
 				8A9669F024187522000089B7 /* Constants.swift in Sources */,
 				8A69D3A42418C4C500208BA7 /* Topic.swift in Sources */,
+				8ADFDD5A24209D270098D5B0 /* TopicDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

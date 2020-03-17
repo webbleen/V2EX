@@ -82,7 +82,7 @@ let APP_VERSION = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! 
 
 // Red Theme
 let BLACK_COLOR = UIColor(red: 0.04, green: 0.02, blue: 0.02, alpha: 1.0)
-let PRIMARY_COLOR = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+let PRIMARY_COLOR = UIColor(red: (((CGFloat)((arc4random() % 256)) / 255.0)), green: (((CGFloat)((arc4random() % 256)) / 255.0)), blue: (((CGFloat)((arc4random() % 256)) / 255.0)), alpha: 1.0)
 let SIDEMENU_NAVBAR_BG_COLOR = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
 let SIDEMENU_BG_COLOR = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.0)
 
